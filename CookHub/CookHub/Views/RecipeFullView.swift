@@ -1,9 +1,3 @@
-//
-//  MealInstructionsView.swift
-//  CookHub
-//
-//  Created by Xhulia Uni on 14.10.23.
-//
 
 import SwiftUI
 
@@ -30,7 +24,7 @@ struct RecipeFullView: View {
                                     .cornerRadius(25)
                                 
                             case .failure(let error):
-                                Text("Failed to load image: \(error.localizedDescription)")
+                                CustomTextView( text:"Failed to load image: \(error.localizedDescription)")
                             @unknown default:
                                 EmptyView()
                             }
@@ -38,25 +32,28 @@ struct RecipeFullView: View {
                     }.padding()
                     
                     HStack {
-                        Text(recipe.strMeal)
+                        CustomTextView( text:recipe.strMeal)
                             .padding()
                             .font(.title).bold()
                             
                         Spacer()
-                        Button(action: {
-                            withAnimation {
-                                isFilled.toggle()
+                       
+                        if !recipe.isLocal {
+                            Button(action: {
+                                withAnimation {
+                                    isFilled.toggle()
+                                }
+                            })
+                            {
+                                Image(systemName: isFilled ? "heart.fill" : "heart")
+                                    .foregroundColor(isFilled ? .red : .gray)
+                                    .imageScale(.large)
+                                    .scaleEffect(isFilled ? 1.2 : 1.0)
+                                    .foregroundColor(.red)
+                                
                             }
-                        })
-                        {
-                            Image(systemName: isFilled ? "heart.fill" : "heart")
-                                .foregroundColor(isFilled ? .red : .gray)
-                                .imageScale(.large)
-                                .scaleEffect(isFilled ? 1.2 : 1.0)
-                                .foregroundColor(.red)
-                            
+                            .padding()
                         }
-                        .padding()
                         
                         
                     }
@@ -65,11 +62,11 @@ struct RecipeFullView: View {
                     
                     HStack{
                         
-                        Text("Category: \(recipe.strCategory)")
+                        CustomTextView( text:"Category: \(recipe.strCategory)")
                             .font(.headline)
                             .padding()
                         
-                        Text("Area: \(recipe.strArea)")
+                        CustomTextView( text:"Area: \(recipe.strArea)")
                             .font(.headline)
                             .padding()
                         
@@ -78,16 +75,15 @@ struct RecipeFullView: View {
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            Text("Ingredients:")
+                            CustomTextView( text:"Ingredients:")
                                 .font(.title3).bold()
                                 .padding(.vertical, 5)
                             
-                            let ingredients = recipe.getIngredients()
-                            let measurements = recipe.getMeasurements()
                             
-                            ForEach(0..<20) { index in
-                                if !ingredients[index].isEmpty {
-                                    Text("\(ingredients[index]) -  \(measurements[index])")
+                            
+                            ForEach(0..<recipe.ingredients.count, id: \.self) { index in
+                                if !recipe.ingredients[index].isEmpty {
+                                    CustomTextView( text:"\(recipe.ingredients[index]) -  \(recipe.measurements[index])")
                                         .font(.body)
                                     
                                 }
@@ -103,14 +99,14 @@ struct RecipeFullView: View {
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            Text("Instructions:")
+                            CustomTextView( text:"Instructions:")
                                 .font(.title3).bold()
                                 .padding(.vertical, 5)
                             
-                            Text(recipe.strInstructions)
+                            CustomTextView( text:recipe.strInstructions)
                                 .font(.body)
                             
-                        } .frame(maxHeight: .infinity, alignment: .top)
+                        } .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             .padding()
                     }.background(.ultraThinMaterial)
                         .cornerRadius(15)
@@ -121,6 +117,3 @@ struct RecipeFullView: View {
     }
 }
 
-//#Preview {
-//    RecipeFullView()
-//}

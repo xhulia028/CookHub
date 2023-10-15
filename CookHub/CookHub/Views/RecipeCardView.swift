@@ -11,11 +11,10 @@ struct RecipeCardView: View {
     var recipe: Recipe
 //    @ObservedObject private var recipeViewModel = RecipeViewModel()
     @State private var isFilled = false
+    @State var isZoomed = false
     
     var body: some View {
         VStack{
-        
-                
                 ZStack{
                     AsyncImage(url: URL(string: recipe.strMealThumb)){ phase in
                         switch phase {
@@ -28,7 +27,7 @@ struct RecipeCardView: View {
                                 .frame(height: 150)
                                 .clipped()
                         case .failure(let error):
-                            Text("Failed to load image: \(error.localizedDescription)")
+                            CustomTextView( text:"Failed to load image: \(error.localizedDescription)")
                         @unknown default:
                             EmptyView()
                         }
@@ -39,9 +38,9 @@ struct RecipeCardView: View {
                     
                     
                     HStack{
-                        Text(recipe.strMeal)
+                        CustomTextView( text:recipe.strMeal)
                             .fontWeight(.bold)
-                        Text("· \(recipe.strCategory)")
+                        CustomTextView( text:"· \(recipe.strCategory)")
                             .foregroundColor(.secondary)
                     }
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -49,24 +48,27 @@ struct RecipeCardView: View {
                     
                     
                     HStack{
-                        Text("#\(recipe.strTags.replacingOccurrences(of: ",", with: " #"))")
+                        CustomTextView( text:"#\(recipe.strTags.replacingOccurrences(of: ",", with: " #"))")
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                             .padding([.leading, .bottom])
-                        Button(action: {
-                            withAnimation {
-                                isFilled.toggle()
+                        if !recipe.isLocal{
+                            Button(action: {
+                                withAnimation {
+                                    isFilled.toggle()
+                                }
+                                
+                            })
+                            {
+                                Image(systemName: isFilled ? "heart.fill" : "heart")
+                                    .foregroundColor(isFilled ? .red : .gray)
+                                    .imageScale(.large)
+                                    .scaleEffect(isFilled ? 1.2 : 1.0)
+                                    .foregroundColor(.red)
+                                
                             }
-                        })
-                        {
-                            Image(systemName: isFilled ? "heart.fill" : "heart")
-                                .foregroundColor(isFilled ? .red : .gray)
-                                .imageScale(.large)
-                                .scaleEffect(isFilled ? 1.2 : 1.0)
-                                .foregroundColor(.red)
-                            
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding()
                         }
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding()
                     }
                 }
                 
@@ -75,19 +77,8 @@ struct RecipeCardView: View {
         }
         .background(Color(.tertiarySystemFill))
         .cornerRadius(12)
-//        .scaleEffect(isZoomed ? 1.1 : 1.0)
-//        .onTapGesture {
-//            withAnimation(.linear(duration: 0.18)){
-//                isZoomed.toggle()
-//            }
-//            if isZoomed {
-//                isZoomed = false
-//            }
-//        }
+
         
     }
 }
 
-//#Preview {
-//    RecipeCardView().previewLayout(.sizeThatFits)
-//}

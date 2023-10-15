@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 enum BadRequestError: Error {
     case badRequest
@@ -19,6 +20,7 @@ class RecipeViewModel: ObservableObject {
     //            await fetchData()
     //        }
     //    }
+    let logger = Logger()
     
     func fetchData() async -> Recipe? {
  
@@ -35,11 +37,19 @@ class RecipeViewModel: ObservableObject {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 let decodedData = try decoder.decode(RecipeResponse.self, from: data)
-                print("sucsses")
-                return decodedData.meals.first
+                logger.info("Success")
+                if let r: RecipeA = decodedData.meals.first {
+                    let recipe = Recipe().populateRecipe(idMeal: r.idMeal, strMeal: r.strMeal, strCategory: r.strCategory, strArea: r.strArea, strInstructions: r.strInstructions, strMealThumb: r.strMealThumb, strTags: r.strTags, ingredients: r.getIngredients(), measurements: r.getMeasurements())
+                    return recipe
+                }
+                else {
+                    return nil
+                }
+                
+                
 
             } catch {
-                print("Error fetching data from Pexels: ")
+                logger.info("Error fetching data from Pexels: \(error)")
                 return nil
             }
     

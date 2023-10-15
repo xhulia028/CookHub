@@ -11,6 +11,14 @@
 		C715A5922ADAD50500C1D986 /* EndlessRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5912ADAD50500C1D986 /* EndlessRecipeView.swift */; };
 		C715A5942ADAE09F00C1D986 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5932ADAE09F00C1D986 /* CreateRecipeView.swift */; };
 		C715A5962ADAE56C00C1D986 /* RecipesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5952ADAE56C00C1D986 /* RecipesListViewModel.swift */; };
+		C715A5982ADB156700C1D986 /* LocalRecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5972ADB156700C1D986 /* LocalRecipesViewModel.swift */; };
+		C715A59A2ADB15BE00C1D986 /* LocalRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5992ADB15BE00C1D986 /* LocalRecipesView.swift */; };
+		C715A59C2ADB1BA700C1D986 /* LocalRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A59B2ADB1BA700C1D986 /* LocalRecipe.swift */; };
+		C715A59E2ADB3B9800C1D986 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A59D2ADB3B9800C1D986 /* IngredientView.swift */; };
+		C715A5A12ADC0D7C00C1D986 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = C715A5A02ADC0D7C00C1D986 /* AlertToast */; };
+		C715A5AB2ADC247300C1D986 /* LikedRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5AA2ADC247300C1D986 /* LikedRecipesView.swift */; };
+		C715A5AD2ADC2AB200C1D986 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5AC2ADC2AB200C1D986 /* MainModel.swift */; };
+		C715A5B02ADC311800C1D986 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C715A5AF2ADC311800C1D986 /* CustomTextView.swift */; };
 		C78325242AD89382001986CA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78325232AD89382001986CA /* Recipe.swift */; };
 		C78325262AD893C4001986CA /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78325252AD893C4001986CA /* RecipeViewModel.swift */; };
 		C7C24F1D2AD5B49C00A2752F /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C24F1C2AD5B49C00A2752F /* RecipeCardView.swift */; };
@@ -45,6 +53,18 @@
 		C715A5912ADAD50500C1D986 /* EndlessRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessRecipeView.swift; sourceTree = "<group>"; };
 		C715A5932ADAE09F00C1D986 /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 		C715A5952ADAE56C00C1D986 /* RecipesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewModel.swift; sourceTree = "<group>"; };
+		C715A5972ADB156700C1D986 /* LocalRecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipesViewModel.swift; sourceTree = "<group>"; };
+		C715A5992ADB15BE00C1D986 /* LocalRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipesView.swift; sourceTree = "<group>"; };
+		C715A59B2ADB1BA700C1D986 /* LocalRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRecipe.swift; sourceTree = "<group>"; };
+		C715A59D2ADB3B9800C1D986 /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
+		C715A5A32ADC1AF500C1D986 /* Trebuchet MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS Bold.ttf"; path = "../../../../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS Bold.ttf"; sourceTree = "<group>"; };
+		C715A5A42ADC1AF500C1D986 /* Trebuchet MS Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS Italic.ttf"; path = "../../../../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS Italic.ttf"; sourceTree = "<group>"; };
+		C715A5A52ADC1AF500C1D986 /* Trebuchet MS Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS Bold Italic.ttf"; path = "../../../../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS Bold Italic.ttf"; sourceTree = "<group>"; };
+		C715A5A62ADC1AF500C1D986 /* Trebuchet MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS.ttf"; path = "../../../../../../../../../System/Library/Fonts/Supplemental/Trebuchet MS.ttf"; sourceTree = "<group>"; };
+		C715A5AA2ADC247300C1D986 /* LikedRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedRecipesView.swift; sourceTree = "<group>"; };
+		C715A5AC2ADC2AB200C1D986 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		C715A5AE2ADC2FB300C1D986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C715A5AF2ADC311800C1D986 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		C78325232AD89382001986CA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C78325252AD893C4001986CA /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		C7C24F1C2AD5B49C00A2752F /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
@@ -65,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C715A5A12ADC0D7C00C1D986 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,13 +106,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C715A5A22ADC1ABB00C1D986 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C715A5A52ADC1AF500C1D986 /* Trebuchet MS Bold Italic.ttf */,
+				C715A5A32ADC1AF500C1D986 /* Trebuchet MS Bold.ttf */,
+				C715A5A42ADC1AF500C1D986 /* Trebuchet MS Italic.ttf */,
+				C715A5A62ADC1AF500C1D986 /* Trebuchet MS.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C715A5A72ADC242A00C1D986 /* LocalRecipesSubsystem */ = {
+			isa = PBXGroup;
+			children = (
+				C715A5932ADAE09F00C1D986 /* CreateRecipeView.swift */,
+				C715A5992ADB15BE00C1D986 /* LocalRecipesView.swift */,
+				C715A59D2ADB3B9800C1D986 /* IngredientView.swift */,
+			);
+			path = LocalRecipesSubsystem;
+			sourceTree = "<group>";
+		};
 		C78325202AD8931C001986CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C715A5A72ADC242A00C1D986 /* LocalRecipesSubsystem */,
 				C715A58F2ADAA60500C1D986 /* RecipeFullView.swift */,
 				C7C24F1C2AD5B49C00A2752F /* RecipeCardView.swift */,
 				C715A5912ADAD50500C1D986 /* EndlessRecipeView.swift */,
-				C715A5932ADAE09F00C1D986 /* CreateRecipeView.swift */,
+				C715A5AA2ADC247300C1D986 /* LikedRecipesView.swift */,
+				C715A5AF2ADC311800C1D986 /* CustomTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				C78325232AD89382001986CA /* Recipe.swift */,
+				C715A59B2ADB1BA700C1D986 /* LocalRecipe.swift */,
+				C715A5AC2ADC2AB200C1D986 /* MainModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,6 +155,7 @@
 			children = (
 				C78325252AD893C4001986CA /* RecipeViewModel.swift */,
 				C715A5952ADAE56C00C1D986 /* RecipesListViewModel.swift */,
+				C715A5972ADB156700C1D986 /* LocalRecipesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -136,6 +183,8 @@
 		C7FA51122AD5B11600AEF576 /* CookHub */ = {
 			isa = PBXGroup;
 			children = (
+				C715A5AE2ADC2FB300C1D986 /* Info.plist */,
+				C715A5A22ADC1ABB00C1D986 /* Fonts */,
 				C78325222AD8933D001986CA /* ViewModels */,
 				C78325212AD89331001986CA /* Models */,
 				C78325202AD8931C001986CA /* Views */,
@@ -188,6 +237,9 @@
 			dependencies = (
 			);
 			name = CookHub;
+			packageProductDependencies = (
+				C715A5A02ADC0D7C00C1D986 /* AlertToast */,
+			);
 			productName = CookHub;
 			productReference = C7FA51102AD5B11600AEF576 /* CookHub.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +312,9 @@
 				Base,
 			);
 			mainGroup = C7FA51072AD5B11600AEF576;
+			packageReferences = (
+				C715A59F2ADC0D7C00C1D986 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = C7FA51112AD5B11600AEF576 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,10 +362,17 @@
 				C78325242AD89382001986CA /* Recipe.swift in Sources */,
 				C7FA51162AD5B11600AEF576 /* ContentView.swift in Sources */,
 				C715A5962ADAE56C00C1D986 /* RecipesListViewModel.swift in Sources */,
+				C715A59A2ADB15BE00C1D986 /* LocalRecipesView.swift in Sources */,
 				C78325262AD893C4001986CA /* RecipeViewModel.swift in Sources */,
+				C715A5982ADB156700C1D986 /* LocalRecipesViewModel.swift in Sources */,
+				C715A5AD2ADC2AB200C1D986 /* MainModel.swift in Sources */,
+				C715A59E2ADB3B9800C1D986 /* IngredientView.swift in Sources */,
+				C715A5B02ADC311800C1D986 /* CustomTextView.swift in Sources */,
 				C715A5902ADAA60500C1D986 /* RecipeFullView.swift in Sources */,
 				C7FA51142AD5B11600AEF576 /* CookHubApp.swift in Sources */,
 				C7C24F1D2AD5B49C00A2752F /* RecipeCardView.swift in Sources */,
+				C715A5AB2ADC247300C1D986 /* LikedRecipesView.swift in Sources */,
+				C715A59C2ADB1BA700C1D986 /* LocalRecipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +538,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CookHub/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookHub/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -504,6 +567,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CookHub/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CookHub/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -634,6 +698,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C715A59F2ADC0D7C00C1D986 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C715A5A02ADC0D7C00C1D986 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C715A59F2ADC0D7C00C1D986 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C7FA51082AD5B11600AEF576 /* Project object */;
 }

@@ -12,10 +12,11 @@ struct EndlessRecpieView: View {
                             recipe in
                             NavigationLink(destination: RecipeFullView(recipe: recipe)){
                                 RecipeCardView(recipe: recipe)
-                                
-                                
+                                                                
                             }.buttonStyle(PlainButtonStyle())
                                 .listRowSeparator(.hidden)
+                            
+                                
                         }
                 }
             }.listStyle(.plain)
@@ -30,17 +31,3 @@ struct EndlessRecpieView: View {
     
 }
 
-#Preview {
-    EndlessRecpieView()
-}
-
-
-//                Text("f \(recipes[0].strMeal)")
-//                RecipeCardView(recipe: recipes[0])
-//                List{
-//                    ForEach(1..<2) { i in
-//                        RecipeCardView(viewModel: self.$viewModel)
-//                            .listRowSeparator(.hidden)
-//                    }
-//
-//                }.listStyle(.plain)
