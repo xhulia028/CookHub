@@ -56,10 +56,10 @@ Cooking Guidance
 
 ## Analysis
 
-![Alt text][UMLClassDiagram]
+![Alt text](UMLClassDiagram.svg)
 
 ## System Design
-![Alt text][ComponentDiagram.svg]
+![Alt text](ComponentDiagram.svg)
 
 
 ## Product Backlog
