@@ -48,7 +48,7 @@ struct RecipeFullView: View {
                             withAnimation {
                                 recipe.isLiked.toggle()
                             }
-                        }) {
+                        }, label: {
                             Image(systemName: recipe.isLiked ? "heart.fill" : "heart")
                                 .foregroundColor(recipe.isLiked ? .red : .gray)
                                 .imageScale(.large)
@@ -56,7 +56,7 @@ struct RecipeFullView: View {
                                 .foregroundColor(.red)
 
                         }
-                        .padding()
+                        ).padding()
                     }
 
                 }

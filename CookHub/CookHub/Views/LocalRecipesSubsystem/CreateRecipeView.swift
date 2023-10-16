@@ -40,9 +40,9 @@ struct CreateRecipeView: View {
                         Button(action: {
                             localRecipesViewModel.ingredients.append("")
                             localRecipesViewModel.measurements.append("")
-                        }) {
+                        }, label: {
                             CustomTextView( text: "Add Ingredient")
-                        }
+                        })
                     }
                 }
 

@@ -23,16 +23,16 @@ struct EndlessRecpieView: View {
                     Task {
                         await model.fetchRecipes()
                     }
-                }) {
+                }, label: {
                     HStack {
                         Spacer()
                         Text("Load More Recipes")
                         Spacer()
                     }
-                }.listRowSeparator(.hidden)
-                .buttonStyle(.bordered)
-                .foregroundColor(Color.secondary)
-
+                }
+                       ).listRowSeparator(.hidden)
+                    .buttonStyle(.bordered)
+                    .foregroundColor(Color.secondary)
             }.listStyle(.plain)
 
         }

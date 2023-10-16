@@ -54,7 +54,7 @@ struct RecipeCardView: View {
                                 recipe.isLiked.toggle()
                             }
 
-                        }) {
+                        }, label: {
                             Image(systemName: recipe.isLiked ? "heart.fill" : "heart")
                                 .foregroundColor(recipe.isLiked ? .red : .gray)
                                 .imageScale(.large)
@@ -62,8 +62,8 @@ struct RecipeCardView: View {
                                 .foregroundColor(.red)
 
                         }
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding()
+                               ).frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding()
                     }
                 }
             }
