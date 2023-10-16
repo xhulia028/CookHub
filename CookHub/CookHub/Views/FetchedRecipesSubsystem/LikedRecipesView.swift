@@ -1,26 +1,23 @@
-
-
 import SwiftUI
 
 struct LikedRecipesView: View {
     @Environment(MainModel.self) private var model
-    
+
     var body: some View {
-        
+
         NavigationStack {
-            
-            List{
+
+            List {
                 if !model.likedRecipes.isEmpty {
                     ForEach(model.likedRecipes, id: \.getIdMeal) { recipe in
-                        NavigationLink(destination: RecipeFullView(recipe: recipe)){
+                        NavigationLink(destination: RecipeFullView(recipe: recipe)) {
                             RecipeCardView(recipe: recipe)
-                            
+
                         }.buttonStyle(PlainButtonStyle())
-                            .listRowSeparator(.hidden)
-                        
+                        .listRowSeparator(.hidden)
+
                     }
-                }
-                else {
+                } else {
                     VStack {
                         Spacer()
                         HStack {
@@ -33,11 +30,9 @@ struct LikedRecipesView: View {
                     .foregroundColor(.secondary)
                     .listRowSeparator(.hidden)
                 }
-                
+
             }.listStyle(.plain)
-            
-            
+
         }
     }
 }
-

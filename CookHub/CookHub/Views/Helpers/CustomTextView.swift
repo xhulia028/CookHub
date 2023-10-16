@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct CustomTextView: View {
@@ -8,4 +7,3 @@ struct CustomTextView: View {
             .font(Font.custom("Trebuchet MS", size: 18))
     }
 }
-
