@@ -56,7 +56,7 @@ Cooking Guidance
 
 ## Analysis
 
-![Alt text][UMLClassDiagram.svg]
+![Alt text][UMLClassDiagram]
 
 ## System Design
 ![Alt text][ComponentDiagram.svg]
