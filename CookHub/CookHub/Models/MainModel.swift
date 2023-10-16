@@ -1,21 +1,82 @@
-//
-//  MainModel.swift
-//  CookHub
-//
-//  Created by Xhulia Uni on 15.10.23.
-//
 
 import Foundation
+import Observation
+import os
 
-class MainModel {
-    let recipesListViewModel = RecipesListViewModel()
-    let localRcipesViewModel = LocalRecipesViewModel()
+let logger = Logger()
+
+// The main model that gets passed around the app and holds the state of the fetched recipes and the local recipes
+// It also enables the user to fetch more recipes if wished
+// Filters the liked recipes from the fetched recipes, to preview to the user
+// handles the fetching of recipes and parsing of the JSON returned from the API
+
+@Observable  class MainModel{
+    var localRecipes: [Recipe] = []
+    var loadMore = false
     var recipes: [Recipe] = []
-    
-    func fetchRecipes () async -> Void {
-        recipes = await recipesListViewModel.populateRecipes()
+    var likedRecipes: [Recipe] {
+        return recipes.filter { $0.isLiked }
     }
     
-   
+    func fetchRecipes () async -> Void {
+        let recipesToAppend = await populateRecipes(n:3)
+        recipes.append(contentsOf: recipesToAppend)
+    }
+    
+    
+    func appendLocal(_ value: Recipe) {
+        localRecipes.append(value)
+    }
+    
+    func isLocalrecipesEmpty()-> Bool {
+        return localRecipes.isEmpty
+    }
+    
+    func populateRecipes(n: Int) async -> [Recipe] {
+        var recipes: [Recipe] = []
+        var count = 0
+        while count < n {
+            if let r = await fetchData(){
+                let recipe = Recipe(recipe: r)
+                recipes.append(recipe)
+                count += 1
+            }
+            
+        }
+        return recipes
+    }
+    
+    func fetchData() async -> RecipeA? {
+        
+        do {
+            guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/random.php") else { fatalError("Missing URL") }
+            
+            let urlRequest = URLRequest(url: url)
+            
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            let decodedData = try decoder.decode(RecipeResponse.self, from: data)
+            logger.info("Success")
+            if let recipe: RecipeA = decodedData.meals.first {
+                return recipe
+            }
+            else {
+                return nil
+            }
+            
+            
+            
+        } catch {
+            logger.info("Error fetching data from Pexels: \(error)")
+            return nil
+        }
+        
+    }
+    
     
 }

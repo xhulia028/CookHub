@@ -5,7 +5,7 @@ import AlertToast
 
 struct LocalRecipesView: View {
     @State private var showAddRecipe = false
-    @StateObject var localRecipesViewModel = LocalRecipesViewModel()
+    @Environment(MainModel.self) private var model
     @State private var showToast = false
     
     
@@ -14,14 +14,14 @@ struct LocalRecipesView: View {
             
             ZStack(alignment: .bottomTrailing){
                 VStack{
-                    if localRecipesViewModel.localRecipes.isEmpty {
+                    if model.isLocalrecipesEmpty() {
                         
                         CustomTextView( text:"You have no recipes")
                         
                     }
                     else {
                         
-                        ForEach(localRecipesViewModel.localRecipes, id: \.strMeal) {
+                        ForEach(model.localRecipes, id: \.getStrMeal) {
                             recipe in
                             NavigationLink(destination: RecipeFullView(recipe: recipe)){
                                 RecipeCardView(recipe: recipe)
@@ -58,7 +58,7 @@ struct LocalRecipesView: View {
                     CreateRecipeView(onDismiss: {
                         showToast = true
                     })
-                    .environmentObject(localRecipesViewModel)
+                    .environment(model)
                     
                 })
             
@@ -69,6 +69,3 @@ struct LocalRecipesView: View {
     }
 }
 
-#Preview {
-    LocalRecipesView()
-}

@@ -7,12 +7,13 @@
 
 import Foundation
 import os
+import Observation
 
 enum BadRequestError: Error {
     case badRequest
 }
 
-class RecipeViewModel: ObservableObject {
+@Observable class NetworkHelper{
     //    @Published var recipe: Recipe?
     
     //    init() {
@@ -39,7 +40,7 @@ class RecipeViewModel: ObservableObject {
                 let decodedData = try decoder.decode(RecipeResponse.self, from: data)
                 logger.info("Success")
                 if let r: RecipeA = decodedData.meals.first {
-                    let recipe = Recipe().populateRecipe(idMeal: r.idMeal, strMeal: r.strMeal, strCategory: r.strCategory, strArea: r.strArea, strInstructions: r.strInstructions, strMealThumb: r.strMealThumb, strTags: r.strTags, ingredients: r.getIngredients(), measurements: r.getMeasurements())
+                    let recipe = Recipe(recipe: r)
                     return recipe
                 }
                 else {

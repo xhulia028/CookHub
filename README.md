@@ -33,10 +33,10 @@ Lack of Time for Meal Planning and Preparation:
 One of the primary problems that CookHub aims to tackle is the time constraints that individuals face in their daily lives. Balancing work, family, and other responsibilities leaves limited time for meal planning, grocery shopping, and cooking. This time pressure often leads to unhealthy food choices and a reliance on fast food and takeout. CookHub aims to provide a solution by offering a curated collection of quick and easy recipes that fit into busy schedules, helping users save time and still enjoy homemade meals.
 Limited Culinary Knowledge and Confidence:
 Many people are intimidated by the thought of cooking at home, fearing that they lack the culinary skills required to prepare a tasty meal. This lack of confidence in the kitchen often prevents individuals from exploring new recipes and cuisines. CookHub is designed to bridge this knowledge gap by offering a wide variety of recipes accompanied by clear, step-by-step instructions. The app aims to empower users to try new recipes and experiment with different flavours.
-Diverse Dietary Needs and Preferences:
-Modern diets are incredibly diverse, with people following various dietary plans such as vegetarian, vegan, gluten-free, or specific nutritional requirements. Finding recipes that cater to these individual preferences can be a difficult task. CookHub addresses this challenge by offering a search and filtering system that allows users to discover recipes tailored to their specific dietary needs.
 Inefficient Recipe Discovery:
 Another problem that CookHub seeks to resolve is the inefficiency in discovering new recipes. Scouring the internet, flipping through cookbooks, or relying on word-of-mouth recommendations can be time-consuming and overwhelming. CookHub simplifies the process by offering a user-friendly recipe database with a recommendation system. Users can easily explore new and exciting recipes.
+Writing down recipes:
+CookHub helps its users to write down their beloved recipes and have a place to store them and browser though them. Using a notebook to write down recipes from friends or family can be tiring, and paper could always get lost. 
 
 
 
@@ -47,30 +47,39 @@ Profile Management
 Recipe Management 
     1. Card View for the recipes
     2. Recipe creation and submission by users 
-    3. Recipe categorization  
-    4. Recipe search and filtering 
-    5. Recipe rating and review system 
-    6. Save favorite recipes to a personal collection 
+    3. Save favorite recipes to a personal collection 
 Cooking Guidance 
-    1.  Step-by-step recipe instructions with images and videos 
-    2. Timer and measurement conversion tools 
-    3. Nutritional information for recipes 
-    4. Cooking tips and techniques section 
-Dietary Preferences and Allergen Filters 
-    1. Dietary preference selection and filtering 
-    2. Allergen detection and filtering
-    3. Special dietary plan support 
-Community and Social Features 
-    1. Map with supermarkets to buy ingredients 
+    1. Step-by-step recipe instructions 
+    2. Measurements for ingredients
+    3. Category of the recipe
+    4. Tags 
 
 ## Analysis
 
-TODO: Include an analysis object model. You can use [draw.io](https://draw.io) or [apollon](https://apollon.ase.cit.tum.de) to create it.
+![Alt text][UMLClassDiagram.svg]
 
 ## System Design
+![Alt text][ComponentDiagram.svg]
 
-TODO: Include a system design overview describing your application.
 
 ## Product Backlog
 
-TODO: Add a product backlog and don't forget to update it with each MR.
+Epic 1: Recipe Management
+
+    Card View for Recipes
+    User Recipe Submission
+    Save Favorite Recipes
+
+Epic 2: Cooking Guidance
+
+    Step-by-Step Instructions
+    Ingredient Measurements
+    Recipe Categories
+    Recipe Tags
+
+General Enhancements (future plans)
+
+    Performance optimization
+    User authentication and profiles
+    Feedback and reporting
+    Notifications

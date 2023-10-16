@@ -1,37 +1,78 @@
-//
-//  Meal.swift
-//  CookHub
-//
-//  Created by Xhulia Uni on 12.10.23.
-//
 
 import Foundation
+import Observation
 
+// The API returns an array with one element, which represents a meal/recipe
 struct RecipeResponse: Codable {
     var meals: [RecipeA]
 }
 
-struct Recipe: Codable {
-    var idMeal = ""
-    var strMeal = ""
-    var strCategory = ""
-    var strArea = ""
-    var strInstructions = ""
-    var strMealThumb = ""
-    var strTags = ""
+// The model for the recipe that gets used throughout the app,
+// Contains extra fields like isLiked or isLocal
+// isLiked -> handles liked recipes
+// isLocal -> hides the like button for local recipes
+
+@Observable class Recipe {
+    var recipeInstance: RecipeA
     var isLiked = false
     var isLocal = false
     var ingredients: [String] = []
     var measurements: [String] = []
     
-    func populateRecipe(idMeal: String, strMeal: String, strCategory: String, strArea: String, strInstructions: String, strMealThumb: String, strTags: String, ingredients: [String], measurements: [String]) -> Recipe {
-        var recipe = Recipe(idMeal: idMeal, strMeal: strMeal, strCategory: strCategory, strArea: strArea, strInstructions: strInstructions, strMealThumb: strMealThumb, strTags: strTags)
-        recipe.ingredients = ingredients
-        recipe.measurements = measurements
-        return recipe
+    init(recipe: RecipeA) {
+        self.recipeInstance = recipe
+        self.ingredients = recipe.getIngredients()
+        self.measurements = recipe.getMeasurements()
+        
     }
     
+    init(idMeal: String, strMeal: String, strCategory: String, strArea: String, strInstructions: String, strMealThumb: String, strTags: String, isLiked: Bool = false, isLocal: Bool = false, ingredients: [String], measurements: [String]) {
+        self.recipeInstance = RecipeA()
+        self.recipeInstance.idMeal = idMeal
+        self.recipeInstance.strMeal = strMeal
+        self.recipeInstance.strCategory = strCategory
+        self.recipeInstance.strArea = strArea
+        self.recipeInstance.strInstructions = strInstructions
+        self.recipeInstance.strMealThumb = strMealThumb
+        self.recipeInstance.strTags = strTags
+        self.recipeInstance = recipeInstance
+        self.isLiked = isLiked
+        self.isLocal = isLocal
+        self.ingredients = ingredients
+        self.measurements = measurements
+    }
+    
+       var getIdMeal: String {
+           return self.recipeInstance.idMeal
+       }
+
+       var getStrMeal: String {
+           return self.recipeInstance.strMeal
+       }
+
+       var getStrCategory: String {
+           return self.recipeInstance.strCategory
+       }
+
+       var getStrArea: String {
+           return self.recipeInstance.strArea
+       }
+
+       var getStrInstructions: String {
+           return self.recipeInstance.strInstructions
+       }
+
+       var getStrMealThumb: String {
+           return self.recipeInstance.strMealThumb
+       }
+
+       var getStrTags: String {
+           return self.recipeInstance.strTags
+       }
+    
 }
+
+// What the api actually returns
 
 struct RecipeA: Codable {
     var idMeal = ""

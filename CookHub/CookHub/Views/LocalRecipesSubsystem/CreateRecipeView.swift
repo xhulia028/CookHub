@@ -1,28 +1,14 @@
-//
-//  CreateRecipeView.swift
-//  CookHub
-//
-//  Created by Xhulia Uni on 14.10.23.
-//
 
 import SwiftUI
 import AlertToast
 
 struct CreateRecipeView: View {
-    @EnvironmentObject var localRecipesViewModel: LocalRecipesViewModel
+    @Environment(MainModel.self) private var model
     @Environment(\.presentationMode) var presentationMode
-    @State private var strMeal: String = ""
-    @State private var strCategory: String = ""
-    @State private var strArea: String = ""
-    @State private var strInstructions: String = ""
-    @State private var strMealThumb: String = ""
-    @State private var strTags: String = ""
-    @State private var ingredients: [String] = [""]
-    @State private var measurements: [String] = [""]
-    
-    @State private var navigateToRecipe = false
-    
     @Environment(\.dismiss) var dismiss
+    
+    @State var localRecipesViewModel = LocalRecipesViewModel()
+    
     var onDismiss: () -> Void
     
     var body: some View {
@@ -30,32 +16,32 @@ struct CreateRecipeView: View {
         NavigationView{
             Form {
                 Section(header: CustomTextView( text:"Recipe Details")) {
-                    TextField("Meal Name", text: $strMeal)
-                    TextField("Category", text: $strCategory)
-                    TextField("Area", text: $strArea)
+                    TextField("Meal Name", text: $localRecipesViewModel.strMeal)
+                    TextField("Category", text: $localRecipesViewModel.strCategory)
+                    TextField("Area", text: $localRecipesViewModel.strArea)
                 }
                 
                 Section(header: CustomTextView( text:"Instructions")) {
-                    TextEditor(text: $strInstructions)
+                    TextEditor(text: $localRecipesViewModel.strInstructions)
                         .frame(minHeight: 200)
                 }
                 
                 Section(header: CustomTextView( text:"Ingredients")) {
-                    ForEach(ingredients.indices, id: \.self) { index in
+                    ForEach($localRecipesViewModel.ingredients.indices, id: \.self) { index in
                         
-                        IngredientView(ingredient: $ingredients[index], amount: $measurements[index])
+                        IngredientView(ingredient: $localRecipesViewModel.ingredients[index], amount: $localRecipesViewModel.measurements[index])
                         {
-                            ingredients.remove(at: index)
-                            measurements.remove(at: index)
+                            localRecipesViewModel.ingredients.remove(at: index)
+                            localRecipesViewModel.measurements.remove(at: index)
                         }
                         
                         
                     }
-                    if ingredients.count < 20 {
+                    if localRecipesViewModel.ingredients.count < 20 {
                         
                         Button(action: {
-                            ingredients.append("")
-                            measurements.append("")
+                            localRecipesViewModel.ingredients.append("")
+                            localRecipesViewModel.measurements.append("")
                         }) {
                             CustomTextView( text:"Add Ingredient")
                         }
@@ -64,11 +50,11 @@ struct CreateRecipeView: View {
                     
                 
                 Section(header: CustomTextView( text:"Thumbnail URL")) {
-                    TextField("Thumbnail URL", text: $strMealThumb)
+                    TextField("Thumbnail URL", text: $localRecipesViewModel.strMealThumb)
                 }
                 
                 Section(header: CustomTextView( text:"Additional Information")) {
-                    TextField("Tags", text: $strTags)
+                    TextField("Tags", text: $localRecipesViewModel.strTags)
                 }
                 
             }
@@ -84,10 +70,8 @@ struct CreateRecipeView: View {
                 }
                 ToolbarItem(placement: .confirmationAction){
                     Button {
-                        let img = strMealThumb != "" ? strMealThumb: "https://st2.depositphotos.com/2586633/46477/v/450/depositphotos_464771766-stock-illustration-no-photo-or-blank-image.jpg"
-                        var newRecipe = Recipe().populateRecipe(idMeal: "", strMeal: strMeal, strCategory: strCategory, strArea: strArea, strInstructions: strInstructions, strMealThumb: img, strTags: strTags, ingredients: ingredients, measurements: measurements)
-                        newRecipe.isLocal = true
-                        localRecipesViewModel.appendLocal(newRecipe)
+                        let newRecipe = localRecipesViewModel.createNewrecipe()
+                        model.appendLocal(newRecipe)
                         onDismiss()
                         presentationMode.wrappedValue.dismiss()
                         
