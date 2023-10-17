@@ -10,15 +10,15 @@ struct EndlessRecpieView: View {
                         NavigationLink(destination: RecipeFullView(recipe: model.recipes[index])) {
                             RecipeCardView(recipe: model.recipes[index])
                         }.buttonStyle(PlainButtonStyle())
-                        .listRowSeparator(.hidden)
+                            .listRowSeparator(.hidden)
                     }
                 }
                 if model.showAlert {
                     CustomTextView(text: "")
                         .alert(isPresented: .constant(true)) {
-                        Alert(title: Text("Fetching gone wrong"), message: Text("Please try reloading again"),
-                              dismissButton: .default(Text("Okay")))
-                    }
+                            Alert(title: Text("Fetching gone wrong"), message: Text("Please try reloading again"),
+                                  dismissButton: .default(Text("Okay")))
+                        }
                 }
                 Button(action: {
                     Task {
@@ -31,7 +31,7 @@ struct EndlessRecpieView: View {
                         Spacer()
                     }
                 }
-                       ).listRowSeparator(.hidden)
+                ).listRowSeparator(.hidden)
                     .buttonStyle(.bordered)
                     .foregroundColor(Color.secondary)
             }.listStyle(.plain)
