@@ -16,7 +16,8 @@ struct EndlessRecpieView: View {
                 if model.showAlert {
                     CustomTextView(text: "")
                         .alert(isPresented: .constant(true)) {
-                            Alert(title: Text("Fetching gone wrong"), message: Text("Please try reloading again"),
+                            Alert(title: Text("Fetching gone wrong"),
+                                  message: Text("Please try reloading again"),
                                   dismissButton: .default(Text("Okay")))
                         }
                 }
