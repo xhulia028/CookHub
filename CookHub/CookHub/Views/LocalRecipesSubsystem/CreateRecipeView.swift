@@ -26,7 +26,6 @@ struct CreateRecipeView: View {
 
                 Section(header: CustomTextView( text: "Ingredients")) {
                     ForEach($localRecipesViewModel.ingredients.indices, id: \.self) { index in
-
                         IngredientView(ingredient: $localRecipesViewModel.ingredients[index],
                                        amount: $localRecipesViewModel.measurements[index]) {
                             localRecipesViewModel.ingredients.remove(at: index)
@@ -34,7 +33,6 @@ struct CreateRecipeView: View {
                         }
                     }
                     if localRecipesViewModel.ingredients.count < 20 {
-
                         Button(action: {
                             localRecipesViewModel.ingredients.append("")
                             localRecipesViewModel.measurements.append("")

@@ -5,7 +5,6 @@ struct RecipeFullView: View {
     var body: some View {
         ScrollView {
             VStack {
-
                 VStack(alignment: .leading) {
                     AsyncImageFullView(url: recipe.getStrMealThumb)
                 }.padding()
@@ -13,7 +12,8 @@ struct RecipeFullView: View {
                 HStack {
                     CustomTextView( text: recipe.getStrMeal)
                         .padding()
-                        .font(.title).bold()
+                        .font(.title)
+                        .bold()
 
                     Spacer()
 
@@ -36,7 +36,6 @@ struct RecipeFullView: View {
                 .padding()
 
                 HStack {
-
                     CustomTextView( text: "Category: \(recipe.getStrCategory)")
                         .font(.headline)
                         .padding()
@@ -45,40 +44,9 @@ struct RecipeFullView: View {
                         .font(.headline)
                         .padding()
                 }
+                IngredientsView(ingredients: recipe.ingredients, measurements: recipe.measurements)
 
-                VStack(alignment: .leading) {
-                    VStack(alignment: .leading) {
-                        CustomTextView( text: "Ingredients:")
-                            .font(.title3).bold()
-                            .padding(.vertical, 5)
-
-                        ForEach(0..<recipe.ingredients.count, id: \.self) { index in
-                            if !recipe.ingredients[index].isEmpty {
-                                CustomTextView( text: "\(recipe.ingredients[index]) -  \(recipe.measurements[index])")
-                                    .font(.body)
-                            }
-                        }
-                    } .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                }.background(.ultraThinMaterial)
-                .cornerRadius(15)
-                .padding()
-
-                VStack(alignment: .leading) {
-                    VStack(alignment: .leading) {
-                        CustomTextView( text: "Instructions:")
-                            .font(.title3).bold()
-                            .padding(.vertical, 5)
-
-                        CustomTextView( text: recipe.getStrInstructions)
-                            .font(.body)
-
-                    } .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .padding()
-                }.background(.ultraThinMaterial)
-                .cornerRadius(15)
-                .padding()
-
+                InstructionsView(getStrInstructions: recipe.getStrInstructions)
             }
         }
     }

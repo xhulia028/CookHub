@@ -10,7 +10,6 @@ struct RecipeCardView: View {
                 AsyncImageView(string: recipe.getStrMealThumb)
             }
             VStack(spacing: 0.0) {
-
                 HStack {
                     CustomTextView( text: recipe.getStrMeal)
                         .fontWeight(.bold)
@@ -35,17 +34,14 @@ struct RecipeCardView: View {
                                 .imageScale(.large)
                                 .scaleEffect(recipe.isLiked ? 1.2 : 1.0)
                                 .foregroundColor(.red)
-
                         }
                                ).frame(maxWidth: .infinity, alignment: .trailing)
                             .padding()
                     }
                 }
             }
-
         }
         .background(Color(.tertiarySystemFill))
         .cornerRadius(12)
-
     }
 }
