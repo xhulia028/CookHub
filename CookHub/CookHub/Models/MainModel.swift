@@ -32,12 +32,10 @@ let logger = Logger()
 
     func populateRecipes(numb: Int) async -> [Recipe] {
         var recipes: [Recipe] = []
-        var count = 0
-        while count < numb {
+        for _ in 1...numb {
             if let fetchedRecipe = await fetchData() {
                 let recipe = Recipe(recipe: fetchedRecipe)
                 recipes.append(recipe)
-                count += 1
             }
         }
         return recipes

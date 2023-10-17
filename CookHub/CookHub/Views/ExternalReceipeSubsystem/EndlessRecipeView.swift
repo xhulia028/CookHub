@@ -13,7 +13,7 @@ struct EndlessRecpieView: View {
                         .listRowSeparator(.hidden)
                     }
                 } else {
-                    LoaderView(isFailed: model.loadMore)
+                    CustomTextView(text: "Failed fetching recipes. Try loading again")
                 }
 
                 Button(action: {

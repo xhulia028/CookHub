@@ -25,6 +25,7 @@
 		C7DB37BC2ADEF91800556312 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB37BB2ADEF91800556312 /* InstructionsView.swift */; };
 		C7DB37BE2ADEF98500556312 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB37BD2ADEF98500556312 /* IngredientsView.swift */; };
 		C7DB37C02ADEFE4A00556312 /* IngredientsAndInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB37BF2ADEFE4A00556312 /* IngredientsAndInstructionsView.swift */; };
+		C7DB37C32ADF268B00556312 /* ExternalRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DB37C22ADF268B00556312 /* ExternalRecipeViewModel.swift */; };
 		C7FA51142AD5B11600AEF576 /* CookHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA51132AD5B11600AEF576 /* CookHubApp.swift */; };
 		C7FA51162AD5B11600AEF576 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA51152AD5B11600AEF576 /* ContentView.swift */; };
 		C7FA51182AD5B11800AEF576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7FA51172AD5B11800AEF576 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		C7DB37BB2ADEF91800556312 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		C7DB37BD2ADEF98500556312 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		C7DB37BF2ADEFE4A00556312 /* IngredientsAndInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsAndInstructionsView.swift; sourceTree = "<group>"; };
+		C7DB37C22ADF268B00556312 /* ExternalRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalRecipeViewModel.swift; sourceTree = "<group>"; };
 		C7FA51102AD5B11600AEF576 /* CookHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FA51132AD5B11600AEF576 /* CookHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHubApp.swift; sourceTree = "<group>"; };
 		C7FA51152AD5B11600AEF576 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C715A5972ADB156700C1D986 /* LocalRecipesViewModel.swift */,
+				C7DB37C22ADF268B00556312 /* ExternalRecipeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				C7FA51162AD5B11600AEF576 /* ContentView.swift in Sources */,
 				C715A59A2ADB15BE00C1D986 /* LocalRecipesView.swift in Sources */,
 				C715A5982ADB156700C1D986 /* LocalRecipesViewModel.swift in Sources */,
+				C7DB37C32ADF268B00556312 /* ExternalRecipeViewModel.swift in Sources */,
 				C715A5AD2ADC2AB200C1D986 /* MainModel.swift in Sources */,
 				C715A59E2ADB3B9800C1D986 /* IngredientView.swift in Sources */,
 				C7DB37BC2ADEF91800556312 /* InstructionsView.swift in Sources */,
