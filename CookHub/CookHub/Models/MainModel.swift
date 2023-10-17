@@ -39,13 +39,11 @@ let logger = Logger()
                 recipes.append(recipe)
                 count += 1
             }
-
         }
         return recipes
     }
 
     func fetchData() async -> RecipeA? {
-
         do {
             guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/random.php")
             else { fatalError("Missing URL") }
@@ -66,12 +64,9 @@ let logger = Logger()
             } else {
                 return nil
             }
-
         } catch {
             logger.info("Error fetching data from Pexels: \(error)")
             return nil
         }
-
     }
-
 }

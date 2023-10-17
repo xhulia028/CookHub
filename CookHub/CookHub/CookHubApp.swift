@@ -11,7 +11,6 @@ struct CookHubApp: App {
                 .task {
                     await model.fetchRecipes()
                 }
-
         }
     }
 }
