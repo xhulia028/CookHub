@@ -34,3 +34,6 @@ struct EndlessRecpieView: View {
         }
     }
 }
+#Preview {
+    LocalRecipesView().environment(MainModel())
+}

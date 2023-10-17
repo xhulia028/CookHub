@@ -27,6 +27,6 @@ struct InstructionsView: View {
     }
 }
 
-// #Preview {
-//     InstructionsView()
-// }
+ #Preview {
+     InstructionsView(getStrInstructions: "random instructions")
+ }

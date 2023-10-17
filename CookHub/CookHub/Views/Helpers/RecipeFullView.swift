@@ -47,3 +47,7 @@ struct RecipeFullView: View {
         }
     }
 }
+
+#Preview {
+    RecipeFullView(recipe: Recipe())
+}

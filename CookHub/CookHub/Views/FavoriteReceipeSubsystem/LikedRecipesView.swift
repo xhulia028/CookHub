@@ -30,3 +30,6 @@ struct LikedRecipesView: View {
         }
     }
 }
+#Preview {
+    LocalRecipesView().environment(MainModel())
+}

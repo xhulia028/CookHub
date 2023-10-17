@@ -39,6 +39,6 @@ struct AsyncImageFullView: View {
     }
 }
 
-// #Preview {
-//     AsyncImageFullView()
-// }
+ #Preview {
+     AsyncImageFullView(url: "https://en.wikipedia.org/wiki/Chocolate_brownie#/media/File:Chocolatebrownie.JPG")
+ }

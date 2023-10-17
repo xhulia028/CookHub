@@ -138,7 +138,6 @@ struct RecipeA: Codable {
             strIngredient15, strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
         ]
     }
-
     func getMeasurements() -> [String] {return
         [
             strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5,

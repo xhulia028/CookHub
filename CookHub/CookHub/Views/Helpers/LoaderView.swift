@@ -9,8 +9,6 @@ struct LoaderView: View {
     }
 }
 
-struct LoaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoaderView(isFailed: false)
-    }
+#Preview {
+    LoaderView(isFailed: false)
 }

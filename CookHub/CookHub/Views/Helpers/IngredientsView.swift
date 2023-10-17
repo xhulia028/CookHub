@@ -31,3 +31,7 @@ struct IngredientsView: View {
         .padding()
     }
 }
+
+#Preview {
+    IngredientsView(ingredients: [""], measurements: [""])
+}

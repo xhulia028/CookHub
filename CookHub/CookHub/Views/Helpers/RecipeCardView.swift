@@ -45,3 +45,7 @@ struct RecipeCardView: View {
         .cornerRadius(12)
     }
 }
+
+#Preview {
+    RecipeCardView(recipe: Recipe(recipe: RecipeA()), isZoomed: false)
+}

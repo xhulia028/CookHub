@@ -23,3 +23,6 @@ struct IngredientView: View {
         }
     }
 }
+#Preview {
+    IngredientView(ingredient: .constant("milk"), amount: .constant("1l"), onDelete: {})
+}

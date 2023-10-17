@@ -7,3 +7,7 @@ struct CustomTextView: View {
             .font(Font.custom("Trebuchet MS", size: 18))
     }
 }
+
+#Preview {
+    CustomTextView(text: "Test Text")
+}

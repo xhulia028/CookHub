@@ -51,3 +51,7 @@ struct CreateRecipeView: View {
         }
     }
 }
+
+#Preview {
+    CreateRecipeView(localRecipesViewModel: LocalRecipesViewModel(), onDismiss: {}).environment(MainModel())
+}

@@ -117,14 +117,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		C715A5A72ADC242A00C1D986 /* LocalRecipesSubsystem */ = {
+		C715A5A72ADC242A00C1D986 /* LocalRecipeSubsystem */ = {
 			isa = PBXGroup;
 			children = (
 				C715A5932ADAE09F00C1D986 /* CreateRecipeView.swift */,
 				C715A5992ADB15BE00C1D986 /* LocalRecipesView.swift */,
 				C715A59D2ADB3B9800C1D986 /* IngredientView.swift */,
 			);
-			path = LocalRecipesSubsystem;
+			path = LocalRecipeSubsystem;
 			sourceTree = "<group>";
 		};
 		C715A5B12ADD2ECB00C1D986 /* Helpers */ = {
@@ -143,21 +143,21 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		C715A5B62ADD737800C1D986 /* FetchedRecipesSubsystem */ = {
+		C715A5B62ADD737800C1D986 /* ExternalReceipeSubsystem */ = {
 			isa = PBXGroup;
 			children = (
 				C715A5912ADAD50500C1D986 /* EndlessRecipeView.swift */,
-				C715A5AA2ADC247300C1D986 /* LikedRecipesView.swift */,
 			);
-			path = FetchedRecipesSubsystem;
+			path = ExternalReceipeSubsystem;
 			sourceTree = "<group>";
 		};
 		C78325202AD8931C001986CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C715A5B62ADD737800C1D986 /* FetchedRecipesSubsystem */,
+				C7DB37C12ADF03A300556312 /* FavoriteReceipeSubsystem */,
+				C715A5B62ADD737800C1D986 /* ExternalReceipeSubsystem */,
 				C715A5B12ADD2ECB00C1D986 /* Helpers */,
-				C715A5A72ADC242A00C1D986 /* LocalRecipesSubsystem */,
+				C715A5A72ADC242A00C1D986 /* LocalRecipeSubsystem */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +177,14 @@
 				C715A5972ADB156700C1D986 /* LocalRecipesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C7DB37C12ADF03A300556312 /* FavoriteReceipeSubsystem */ = {
+			isa = PBXGroup;
+			children = (
+				C715A5AA2ADC247300C1D986 /* LikedRecipesView.swift */,
+			);
+			path = FavoriteReceipeSubsystem;
 			sourceTree = "<group>";
 		};
 		C7FA51072AD5B11600AEF576 = {

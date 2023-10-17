@@ -37,3 +37,7 @@ struct IngredientsAndInstructionsView: View {
         }
     }
 }
+
+#Preview {
+    IngredientsAndInstructionsView(localRecipesViewModel: LocalRecipesViewModel())
+}
