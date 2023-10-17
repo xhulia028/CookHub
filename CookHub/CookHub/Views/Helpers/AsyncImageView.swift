@@ -38,5 +38,5 @@ struct AsyncImageView: View {
 }
 
  #Preview {
-     AsyncImageView(url:"https://en.wikipedia.org/wiki/Chocolate_brownie#/media/File:Chocolatebrownie.JPG")
+     AsyncImageView(string: "https://en.wikipedia.org/wiki/Chocolate_brownie#/media/File:Chocolatebrownie.JPG")
  }

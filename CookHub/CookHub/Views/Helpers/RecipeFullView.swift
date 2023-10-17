@@ -49,5 +49,5 @@ struct RecipeFullView: View {
 }
 
 #Preview {
-    RecipeFullView(recipe: Recipe())
+    RecipeFullView(recipe: Recipe(recipe: RecipeA()))
 }
