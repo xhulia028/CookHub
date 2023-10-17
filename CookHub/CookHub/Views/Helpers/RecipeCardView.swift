@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecipeCardView: View {
-    @State var recipe: Recipe
+    @Bindable var recipe: Recipe
     @State var isZoomed = false
 
     var body: some View {

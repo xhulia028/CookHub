@@ -62,3 +62,7 @@ struct LocalRecipesView: View {
 
     }
 }
+
+#Preview {
+    LocalRecipesView().environment(MainModel())
+}

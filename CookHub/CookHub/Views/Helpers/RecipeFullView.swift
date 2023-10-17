@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecipeFullView: View {
-    @State var recipe: Recipe
+    @Bindable var recipe: Recipe
     var body: some View {
         ScrollView {
             VStack {
