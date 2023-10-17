@@ -7,32 +7,8 @@ struct RecipeCardView: View {
     var body: some View {
         VStack {
             ZStack {
-                AsyncImage(url: URL(string: recipe.getStrMealThumb)) { phase in
-                    switch phase {
-                    case .empty:
-                        Image("no_image")
-                            .resizable()
-                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                            .frame(height: 150)
-                            .clipped()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                            .frame(height: 150)
-                            .clipped()
-                    case .failure:
-                        Image("no_image")
-                            .resizable()
-                            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                            .frame(height: 150)
-                            .clipped()
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
+                AsyncImageView(string: recipe.getStrMealThumb)
             }
-
             VStack(spacing: 0.0) {
 
                 HStack {
@@ -53,7 +29,6 @@ struct RecipeCardView: View {
                             withAnimation {
                                 recipe.isLiked.toggle()
                             }
-
                         }, label: {
                             Image(systemName: recipe.isLiked ? "heart.fill" : "heart")
                                 .foregroundColor(recipe.isLiked ? .red : .gray)

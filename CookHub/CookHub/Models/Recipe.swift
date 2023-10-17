@@ -17,13 +17,13 @@ struct RecipeResponse: Codable {
     var isLocal = false
     var ingredients: [String] = []
     var measurements: [String] = []
-    
+
     init(recipe: RecipeA) {
         self.recipeInstance = recipe
         self.ingredients = recipe.getIngredients()
         self.measurements = recipe.getMeasurements()
     }
-    
+
     init(idMeal: String,
          strMeal: String,
          strCategory: String,
@@ -49,31 +49,31 @@ struct RecipeResponse: Codable {
         self.ingredients = ingredients
         self.measurements = measurements
     }
-    
+
     var getIdMeal: String {
         return self.recipeInstance.idMeal
     }
-    
+
     var getStrMeal: String {
         return self.recipeInstance.strMeal
     }
-    
+
     var getStrCategory: String {
         return self.recipeInstance.strCategory
     }
-    
+
     var getStrArea: String {
         return self.recipeInstance.strArea
     }
-    
+
     var getStrInstructions: String {
         return self.recipeInstance.strInstructions
     }
-    
+
     var getStrMealThumb: String {
         return self.recipeInstance.strMealThumb
     }
-    
+
     var getStrTags: String {
         return self.recipeInstance.strTags
     }
@@ -129,7 +129,7 @@ struct RecipeA: Codable {
     private var strMeasure18 = ""
     private var strMeasure19 = ""
     private var strMeasure20 = ""
-    
+
     func getIngredients() -> [String] {return
         [
             strIngredient1, strIngredient2, strIngredient3, strIngredient4,
@@ -138,7 +138,7 @@ struct RecipeA: Codable {
             strIngredient15, strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
         ]
     }
-    
+
     func getMeasurements() -> [String] {return
         [
             strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5,

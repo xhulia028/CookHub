@@ -3,7 +3,7 @@ import SwiftUI
 @main
 
 struct CookHubApp: App {
-    @State var model: MainModel = MainModel()
+    @State var model = MainModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
