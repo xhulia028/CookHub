@@ -17,17 +17,23 @@ struct RecipeResponse: Codable {
     var isLocal = false
     var ingredients: [String] = []
     var measurements: [String] = []
-
+    
     init(recipe: RecipeA) {
         self.recipeInstance = recipe
         self.ingredients = recipe.getIngredients()
         self.measurements = recipe.getMeasurements()
-
     }
-
-    init(idMeal: String, strMeal: String, strCategory: String, strArea: String,
-         strInstructions: String, strMealThumb: String, strTags: String,
-         isLiked: Bool = false, isLocal: Bool = false, ingredients: [String],
+    
+    init(idMeal: String,
+         strMeal: String,
+         strCategory: String,
+         strArea: String,
+         strInstructions: String,
+         strMealThumb: String,
+         strTags: String,
+         isLiked: Bool = false,
+         isLocal: Bool = false,
+         ingredients: [String],
          measurements: [String]) {
         self.recipeInstance = RecipeA()
         self.recipeInstance.idMeal = idMeal
@@ -43,35 +49,34 @@ struct RecipeResponse: Codable {
         self.ingredients = ingredients
         self.measurements = measurements
     }
-
+    
     var getIdMeal: String {
         return self.recipeInstance.idMeal
     }
-
+    
     var getStrMeal: String {
         return self.recipeInstance.strMeal
     }
-
+    
     var getStrCategory: String {
         return self.recipeInstance.strCategory
     }
-
+    
     var getStrArea: String {
         return self.recipeInstance.strArea
     }
-
+    
     var getStrInstructions: String {
         return self.recipeInstance.strInstructions
     }
-
+    
     var getStrMealThumb: String {
         return self.recipeInstance.strMealThumb
     }
-
+    
     var getStrTags: String {
         return self.recipeInstance.strTags
     }
-
 }
 
 // What the api actually returns
@@ -124,19 +129,22 @@ struct RecipeA: Codable {
     private var strMeasure18 = ""
     private var strMeasure19 = ""
     private var strMeasure20 = ""
-
+    
     func getIngredients() -> [String] {return
-        [strIngredient1, strIngredient2, strIngredient3, strIngredient4,
-         strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9,
-         strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14,
-         strIngredient15, strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20]
+        [
+            strIngredient1, strIngredient2, strIngredient3, strIngredient4,
+            strIngredient5, strIngredient6, strIngredient7, strIngredient8, strIngredient9,
+            strIngredient10, strIngredient11, strIngredient12, strIngredient13, strIngredient14,
+            strIngredient15, strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
+        ]
     }
-
+    
     func getMeasurements() -> [String] {return
-        [strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5,
-         strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10,
-         strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, strMeasure16,
-         strMeasure17, strMeasure18, strMeasure19, strMeasure20]
+        [
+            strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5,
+            strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10,
+            strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15, strMeasure16,
+            strMeasure17, strMeasure18, strMeasure19, strMeasure20
+        ]
     }
-
 }

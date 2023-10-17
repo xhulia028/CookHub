@@ -11,7 +11,6 @@ struct CreateRecipeView: View {
     var onDismiss: () -> Void
 
     var body: some View {
-
         NavigationView {
             Form {
                 Section(header: CustomTextView( text: "Recipe Details")) {
@@ -33,7 +32,6 @@ struct CreateRecipeView: View {
                             localRecipesViewModel.ingredients.remove(at: index)
                             localRecipesViewModel.measurements.remove(at: index)
                         }
-
                     }
                     if localRecipesViewModel.ingredients.count < 20 {
 
@@ -49,13 +47,10 @@ struct CreateRecipeView: View {
                 Section(header: CustomTextView( text: "Thumbnail URL")) {
                     TextField("Thumbnail URL", text: $localRecipesViewModel.strMealThumb)
                 }
-
                 Section(header: CustomTextView( text: "Additional Information")) {
                     TextField("Tags", text: $localRecipesViewModel.strTags)
                 }
-
             }
-
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {
@@ -76,7 +71,6 @@ struct CreateRecipeView: View {
                         Label("Save", systemImage: "checkmark")
                             .labelStyle(.titleOnly)
                     }
-
                 }
             }.navigationBarTitle("New Recipe", displayMode: .inline)
         }

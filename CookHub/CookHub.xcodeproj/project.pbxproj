@@ -24,9 +24,6 @@
 		C7FA51162AD5B11600AEF576 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA51152AD5B11600AEF576 /* ContentView.swift */; };
 		C7FA51182AD5B11800AEF576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7FA51172AD5B11800AEF576 /* Assets.xcassets */; };
 		C7FA511B2AD5B11800AEF576 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7FA511A2AD5B11800AEF576 /* Preview Assets.xcassets */; };
-		C7FA51252AD5B11800AEF576 /* CookHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA51242AD5B11800AEF576 /* CookHubTests.swift */; };
-		C7FA512F2AD5B11800AEF576 /* CookHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA512E2AD5B11800AEF576 /* CookHubUITests.swift */; };
-		C7FA51312AD5B11800AEF576 /* CookHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA51302AD5B11800AEF576 /* CookHubUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +67,7 @@
 		C7FA51172AD5B11800AEF576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7FA511A2AD5B11800AEF576 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C7FA51202AD5B11800AEF576 /* CookHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7FA51242AD5B11800AEF576 /* CookHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHubTests.swift; sourceTree = "<group>"; };
 		C7FA512A2AD5B11800AEF576 /* CookHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7FA512E2AD5B11800AEF576 /* CookHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHubUITests.swift; sourceTree = "<group>"; };
-		C7FA51302AD5B11800AEF576 /* CookHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				C7FA51122AD5B11600AEF576 /* CookHub */,
-				C7FA51232AD5B11800AEF576 /* CookHubTests */,
-				C7FA512D2AD5B11800AEF576 /* CookHubUITests */,
 				C7FA51112AD5B11600AEF576 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -212,23 +204,6 @@
 				C7FA511A2AD5B11800AEF576 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		C7FA51232AD5B11800AEF576 /* CookHubTests */ = {
-			isa = PBXGroup;
-			children = (
-				C7FA51242AD5B11800AEF576 /* CookHubTests.swift */,
-			);
-			path = CookHubTests;
-			sourceTree = "<group>";
-		};
-		C7FA512D2AD5B11800AEF576 /* CookHubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C7FA512E2AD5B11800AEF576 /* CookHubUITests.swift */,
-				C7FA51302AD5B11800AEF576 /* CookHubUITestsLaunchTests.swift */,
-			);
-			path = CookHubUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7FA51252AD5B11800AEF576 /* CookHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,8 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7FA51312AD5B11800AEF576 /* CookHubUITestsLaunchTests.swift in Sources */,
-				C7FA512F2AD5B11800AEF576 /* CookHubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

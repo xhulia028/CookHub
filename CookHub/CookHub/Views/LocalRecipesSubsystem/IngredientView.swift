@@ -7,7 +7,6 @@ struct IngredientView: View {
 
     var body: some View {
         HStack {
-
             TextField("Ingredient", text: $ingredient)
                 .multilineTextAlignment(.center)
             Rectangle()
@@ -21,7 +20,6 @@ struct IngredientView: View {
             Button(action: onDelete) {
                 Image(systemName: "trash")
             }
-
         }
     }
 }

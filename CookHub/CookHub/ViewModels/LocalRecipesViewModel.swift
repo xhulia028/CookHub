@@ -19,10 +19,16 @@ import Observation
     var navigateToRecipe = false
 
     func createNewrecipe() -> Recipe {
-        let newRecipe = Recipe(idMeal: "", strMeal: strMeal, strCategory: strCategory,
-                               strArea: strArea, strInstructions: strInstructions,
-                               strMealThumb: strMealThumb, strTags: strTags,
-                               ingredients: ingredients, measurements: measurements)
+        let newRecipe = Recipe(
+            idMeal: "",
+            strMeal: strMeal,
+            strCategory: strCategory,
+            strArea: strArea,
+            strInstructions: strInstructions,
+            strMealThumb: strMealThumb,
+            strTags: strTags,
+            ingredients: ingredients,
+            measurements: measurements)
         newRecipe.isLocal = true
         return newRecipe
     }

@@ -6,16 +6,13 @@ struct LikedRecipesView: View {
     var body: some View {
 
         NavigationStack {
-
             List {
                 if !model.likedRecipes.isEmpty {
                     ForEach(model.likedRecipes, id: \.getIdMeal) { recipe in
                         NavigationLink(destination: RecipeFullView(recipe: recipe)) {
                             RecipeCardView(recipe: recipe)
-
                         }.buttonStyle(PlainButtonStyle())
                         .listRowSeparator(.hidden)
-
                     }
                 } else {
                     VStack {
@@ -30,9 +27,7 @@ struct LikedRecipesView: View {
                     .foregroundColor(.secondary)
                     .listRowSeparator(.hidden)
                 }
-
             }.listStyle(.plain)
-
         }
     }
 }
