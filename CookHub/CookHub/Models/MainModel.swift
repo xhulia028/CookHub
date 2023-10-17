@@ -12,13 +12,14 @@ let logger = Logger()
 @Observable  class MainModel {
     var localRecipes: [Recipe] = []
     var loadMore = false
+    var showAlert = false
     var recipes: [Recipe] = []
     var likedRecipes: [Recipe] {
         return recipes.filter { $0.isLiked }
     }
 
     func fetchRecipes () async {
-        let recipesToAppend = await populateRecipes(numb: 3)
+        let recipesToAppend = await populateRecipes(numb: 10)
         recipes.append(contentsOf: recipesToAppend)
     }
 
@@ -31,11 +32,14 @@ let logger = Logger()
     }
 
     func populateRecipes(numb: Int) async -> [Recipe] {
+        showAlert = false
         var recipes: [Recipe] = []
         for _ in 1...numb {
             if let fetchedRecipe = await fetchData() {
                 let recipe = Recipe(recipe: fetchedRecipe)
                 recipes.append(recipe)
+            } else {
+                showAlert = true
             }
         }
         return recipes

@@ -12,10 +12,14 @@ struct EndlessRecpieView: View {
                         }.buttonStyle(PlainButtonStyle())
                         .listRowSeparator(.hidden)
                     }
-                } else {
-                    CustomTextView(text: "Failed fetching recipes. Try loading again")
                 }
-
+                if model.showAlert {
+                    CustomTextView(text: "")
+                        .alert(isPresented: .constant(true)) {
+                        Alert(title: Text("Fetching gone wrong"), message: Text("Please try reloading again"),
+                              dismissButton: .default(Text("Okay")))
+                    }
+                }
                 Button(action: {
                     Task {
                         await model.fetchRecipes()
