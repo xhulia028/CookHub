@@ -11,9 +11,7 @@ struct LocalRecipesView: View {
             ZStack(alignment: .bottomTrailing) {
                 VStack {
                     if model.isLocalrecipesEmpty() {
-
                         CustomTextView( text: "You have no recipes")
-
                     } else {
                         ForEach(model.localRecipes, id: \.getStrMeal) { recipe in
                             NavigationLink(destination: RecipeFullView(recipe: recipe)) { RecipeCardView(recipe: recipe)
@@ -23,7 +21,6 @@ struct LocalRecipesView: View {
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .toast(isPresenting: $showToast, duration: 1.5, tapToDismiss: true) {
-
                     AlertToast(type: .complete(Color.green), title: "New Recipe Created")
                 }
                 Button {

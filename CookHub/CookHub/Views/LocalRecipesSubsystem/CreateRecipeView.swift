@@ -53,24 +53,24 @@ struct CreateRecipeView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button {
+                    Button(action: {
                         dismiss()
-                    } label: {
+                    }, label: {
                         Label("Cancel", systemImage: "xmark")
                             .labelStyle(.titleOnly)
-                    }
+                    })
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button {
+                    Button( action: {
                         let newRecipe = localRecipesViewModel.createNewrecipe()
                         model.appendLocal(newRecipe)
                         onDismiss()
-                        presentationMode.wrappedValue.dismiss()
+                        presentationMode.wrappedValue.dismiss()}
 
-                    } label: {
+                    , label: {
                         Label("Save", systemImage: "checkmark")
                             .labelStyle(.titleOnly)
-                    }
+                    })
                 }
             }.navigationBarTitle("New Recipe", displayMode: .inline)
         }

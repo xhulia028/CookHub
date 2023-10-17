@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ContentView: View {
-
     @Environment(MainModel.self) private var model
     var body: some View {
         TabView {
@@ -23,6 +22,5 @@ struct ContentView: View {
                     Label("My Recipes", systemImage: "tray")
                 }
         }
-
     }
 }

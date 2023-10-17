@@ -4,7 +4,6 @@ struct LikedRecipesView: View {
     @Environment(MainModel.self) private var model
 
     var body: some View {
-
         NavigationStack {
             List {
                 if !model.likedRecipes.isEmpty {
