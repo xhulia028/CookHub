@@ -14,7 +14,8 @@ struct IngredientsView: View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 CustomTextView( text: "Ingredients:")
-                    .font(.title3).bold()
+                    .font(.title3)
+                    .bold()
                     .padding(.vertical, 5)
 
                 ForEach(0..<ingredients.count, id: \.self) { index in

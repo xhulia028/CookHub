@@ -5,15 +5,11 @@ struct RecipeFullView: View {
     var body: some View {
         ScrollView {
             VStack {
-                VStack(alignment: .leading) {
                     AsyncImageFullView(url: recipe.getStrMealThumb)
-                }.padding()
-
                 HStack {
                     CustomTextView( text: recipe.getStrMeal)
                         .padding()
                         .font(.title)
-                        .bold()
 
                     Spacer()
 

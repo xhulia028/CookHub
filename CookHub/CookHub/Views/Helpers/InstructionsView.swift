@@ -13,12 +13,12 @@ struct InstructionsView: View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 CustomTextView( text: "Instructions:")
-                    .font(.title3).bold()
+                    .font(.title3)
+                    .bold()
                     .padding(.vertical, 5)
 
                 CustomTextView( text: getStrInstructions)
                     .font(.body)
-
             } .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .padding()
         }.background(.ultraThinMaterial)

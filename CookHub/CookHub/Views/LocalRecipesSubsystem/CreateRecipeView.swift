@@ -70,7 +70,8 @@ struct CreateRecipeView: View {
                             .labelStyle(.titleOnly)
                     })
                 }
-            }.navigationBarTitle("New Recipe", displayMode: .inline)
+            }
+            .navigationBarTitle("New Recipe", displayMode: .inline)
         }
     }
 }

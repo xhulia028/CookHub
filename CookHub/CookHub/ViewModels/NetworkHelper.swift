@@ -24,7 +24,6 @@ enum BadRequestError: Error {
     let logger = Logger()
 
     func fetchData() async -> Recipe? {
-
         do {
             guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/random.php")
             else { fatalError("Missing URL") }
@@ -46,11 +45,9 @@ enum BadRequestError: Error {
             } else {
                 return nil
             }
-
         } catch {
             logger.info("Error fetching data from Pexels: \(error)")
             return nil
         }
-
     }
 }
