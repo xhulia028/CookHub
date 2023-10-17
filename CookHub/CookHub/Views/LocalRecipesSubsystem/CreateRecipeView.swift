@@ -21,9 +21,6 @@ struct CreateRecipeView: View {
 
                 IngredientsAndInstructionsView(localRecipesViewModel: localRecipesViewModel)
 
-                Section(header: CustomTextView( text: "Thumbnail URL")) {
-                    TextField("Thumbnail URL", text: $localRecipesViewModel.strMealThumb)
-                }
                 Section(header: CustomTextView( text: "Additional Information")) {
                     TextField("Tags", text: $localRecipesViewModel.strTags)
                 }

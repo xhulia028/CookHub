@@ -32,5 +32,8 @@ struct IngredientsAndInstructionsView: View {
                 })
             }
         }
+        Section(header: CustomTextView( text: "Thumbnail URL")) {
+            TextField("Thumbnail URL", text: $localRecipesViewModel.strMealThumb)
+        }
     }
 }
